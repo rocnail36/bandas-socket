@@ -2,10 +2,10 @@ const uuid = require("uuid").v4
 
 class band {
 
-    constructor(name,count){
+    constructor(name){
         this.id = uuid()
         this.name = name,
-        this.count = count
+        this.vote = 1 
     }
 
 }

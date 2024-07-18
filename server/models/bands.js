@@ -1,3 +1,4 @@
+const band = require("./Band")
 
 
 
@@ -41,6 +42,12 @@ class Bands {
         this.bands.filter(band => band.id == id)[0].name = name
         
         return this.bands
+    }
+
+    static createBand(data){
+      const newBand =  new band(data)
+      this.bands.push(newBand)
+      return this.bands
     }
 
 }

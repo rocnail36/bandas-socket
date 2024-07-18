@@ -27,6 +27,10 @@ class Socket {
               this.io.emit("changeNameToClient", Bands.changeName(data))
             })
 
+            socket.on("createBand",(data) => {
+              this.io.emit("createBandToClient", Bands.createBand(data))
+            })
+
 
           });
     }
