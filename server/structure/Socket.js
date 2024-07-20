@@ -13,22 +13,22 @@ class Socket {
         this.io.on("connection", (socket) => {
            
 
-            socket.emit("bands",{data:Bands.bands})
+            socket.emit("bands",Bands.bands)
 
             socket.on("addVote",(data) => {
-              this.io.emit("addVoteToClient", Bands.addVote(data))
+              this.io.emit("bands", Bands.addVote(data))
             })
 
             socket.on("deleteBand",(data) => {
-              this.io.emit("deleteBandToClient",Bands.deleteBand(data))
+              this.io.emit("bands",Bands.deleteBand(data))
             })
 
             socket.on("changeName",(data) => {
-              this.io.emit("changeNameToClient", Bands.changeName(data))
+              this.io.emit("bands", Bands.changeName(data))
             })
 
             socket.on("createBand",(data) => {
-              this.io.emit("createBandToClient", Bands.createBand(data))
+              this.io.emit("bands", Bands.createBand(data))
             })
 
 
